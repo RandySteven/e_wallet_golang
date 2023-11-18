@@ -1,0 +1,9 @@
+{
+    "walletNumber": "123456789",
+    "method": "VA",
+    "bank": {
+        "bankName": "BCA",
+        "bankCode": "5678"
+    },
+    "amount": 12000
+}

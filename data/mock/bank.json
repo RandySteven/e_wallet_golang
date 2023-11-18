@@ -1,0 +1,38 @@
+[
+    {
+        "id":1,
+        "method": "VA",
+        "banks":[
+            {
+                "bankName": "BCA",
+                "bankCode": "5560"
+            },
+            {
+                "bankName": "BRI",
+                "bankCode": "5561"
+            },
+            {
+                "bankName": "BNI",
+                "bankCode": "5562"
+            },
+            {
+                "bankName": "Mandiri",
+                "bankCode": "5563"
+            }
+        ]
+    },
+    {
+        "id":2, 
+        "method": "OTC",
+        "merchants":[
+            {
+                "merchantName": "Indomaret",
+                "merchantCode": "1101"
+            },
+            {
+                "merchantName": "Alfamart",
+                "merchantCode": "1102"
+            }
+        ]
+    }
+]
