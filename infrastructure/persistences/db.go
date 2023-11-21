@@ -15,6 +15,7 @@ type Repositories struct {
 	UserProfile         repositories.UserProfileRepository
 	Wallet              repositories.WalletRepository
 	TransferTransaction repositories.TransferRepository
+	TopupTransaction    repositories.TopupRepository
 	db                  *gorm.DB
 }
 
@@ -32,6 +33,7 @@ func NewRepository(dbHost, dbName, dbUser, dbPass, dbPort string) (*Repositories
 		UserProfile:         NewUserProfileRepository(db),
 		Wallet:              NewWalletRepository(db),
 		TransferTransaction: NewTransferRepository(db),
+		TopupTransaction:    NewTopupRepository(db),
 		db:                  db,
 	}, nil
 }

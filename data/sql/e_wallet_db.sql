@@ -193,3 +193,10 @@ VALUES
     (18000),
     (19000),
     (20000);
+
+SELECT u.name, up.email, w.number, w.balance FROM users u JOIN user_profiles up
+ON u.id = up.user_id JOIN wallets w
+ON u.id = w.user_id;
+
+UPDATE wallets 
+SET balance = 100000;

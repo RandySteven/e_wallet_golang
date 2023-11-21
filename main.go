@@ -9,6 +9,7 @@ import (
 	"os"
 
 	"github.com/gin-gonic/gin"
+	"github.com/go-playground/validator/v10"
 	"github.com/joho/godotenv"
 )
 
@@ -41,13 +42,16 @@ func main() {
 	}
 
 	gin.SetMode("debug")
+	validate := validator.New()
 
-	users := interfaces.NewUser(apps.NewUserApp(*services))
+	users := interfaces.NewUser(apps.NewUserApp(*services), validate)
 	transfers := interfaces.NewTransferTransaction(apps.NewTransferApp(*services))
+	topups := interfaces.NewTopup(apps.NewTopup(*services))
 	r := gin.New()
 	v1 := r.Group("/v1")
 	routers.UserRouter(v1, users)
 	routers.TransferRouter(v1, transfers)
+	routers.TopupRouter(v1, topups)
 
 	appPort := os.Getenv("APP_PORT")
 	log.Fatal(r.Run(":" + appPort))
